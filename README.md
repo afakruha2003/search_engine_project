@@ -6,7 +6,7 @@
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 search_engine_project/
@@ -46,7 +46,7 @@ Then open your browser at: **http://localhost:8501**
 
 ---
 
-## 🚀 How to Use
+##  How to Use
 
 1. **Sidebar → Enter folder path** (default: `documents`)
 2. **Choose preprocessing method**: Stemming or Lemmatization
@@ -55,19 +55,19 @@ Then open your browser at: **http://localhost:8501**
 
 | Page | Description |
 |------|-------------|
-| 🏠 Home | System overview, document list, architecture diagram |
-| 🔤 Preprocessing | Step-by-step view of normalization pipeline |
-| 📊 Incidence Matrix | Binary matrix display + Boolean query |
-| 📋 Inverted Index | Posting lists + Boolean AND/OR/NOT search |
-| 📍 Positional Index | Term positions + exact phrase queries |
-| 🏆 Ranked Retrieval | TF-IDF scoring + Cosine Similarity ranking |
-| ⚡ Boolean Search | Combined Boolean query interface |
-| ✨ Bonus Features | Wildcard, Spell Check, Query Expansion, Snippets |
-| 📈 Evaluation | Precision, Recall, F1-Score computation |
+|  Home | System overview, document list, architecture diagram |
+|  Preprocessing | Step-by-step view of normalization pipeline |
+|  Incidence Matrix | Binary matrix display + Boolean query |
+|  Inverted Index | Posting lists + Boolean AND/OR/NOT search |
+|  Positional Index | Term positions + exact phrase queries |
+|  Ranked Retrieval | TF-IDF scoring + Cosine Similarity ranking |
+|  Boolean Search | Combined Boolean query interface |
+|  Bonus Features | Wildcard, Spell Check, Query Expansion, Snippets |
+|  Evaluation | Precision, Recall, F1-Score computation |
 
 ---
 
-## 🔍 Example Queries
+##  Example Queries
 
 ### Boolean Queries
 ```
@@ -104,19 +104,19 @@ mac*ine
 
 ---
 
-## 🎁 Bonus Features Implemented (+25 pts)
+##  Bonus Features Implemented 
 
-- ✅ **Wildcard query processing** — regex-based prefix/suffix/infix matching
-- ✅ **Spelling correction** — Levenshtein edit distance
-- ✅ **Query expansion** — synonym-based term expansion
-- ✅ **Document snippets** — context-aware snippet extraction
-- ✅ **Web-based GUI** — Streamlit interface
-- ✅ **Evaluation metrics** — Precision, Recall, F1-Score
-- ✅ **Stemming vs Lemmatization comparison** — side-by-side table
+-  **Wildcard query processing** — regex-based prefix/suffix/infix matching
+-  **Spelling correction** — Levenshtein edit distance
+-  **Query expansion** — synonym-based term expansion
+-  **Document snippets** — context-aware snippet extraction
+-  **Web-based GUI** — Streamlit interface
+-  **Evaluation metrics** — Precision, Recall, F1-Score
+-  **Stemming vs Lemmatization comparison** — side-by-side table
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ```
 streamlit
@@ -127,6 +127,4 @@ numpy
 
 ---
 
-## 👤 Academic Integrity
 
-All code implements the algorithms taught in class. No core logic was copied from external sources.
