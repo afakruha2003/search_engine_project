@@ -1,0 +1,11 @@
+Data Science and Big Data Analytics
+
+Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. It combines expertise from statistics, computer science, and domain knowledge to solve complex problems.
+
+Big data refers to extremely large datasets that cannot be processed using traditional data management tools. The three defining characteristics of big data are volume, the amount of data generated, velocity, the speed at which data is generated and processed, and variety, the different types of data.
+
+Data mining is the process of discovering patterns, correlations, anomalies, and trends in large datasets using statistical and machine learning techniques. Association rule mining, clustering, and classification are common data mining methods used across business and scientific applications.
+
+Data visualization transforms complex datasets into visual representations like charts, graphs, and maps that humans can easily interpret. Tools like Tableau, Power BI, and Python libraries such as Matplotlib and Seaborn enable analysts to communicate insights effectively.
+
+The data science workflow involves collecting and cleaning raw data, performing exploratory analysis, building predictive models, validating results, and deploying solutions. Clean, high-quality data is foundational to accurate machine learning models and reliable business intelligence systems.

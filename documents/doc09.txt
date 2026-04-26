@@ -1,0 +1,11 @@
+The Internet and Web Technologies
+
+The Internet is a global network of interconnected computers that communicate using standardized protocols. It was originally developed by the US Department of Defense as ARPANET in the 1960s. Today, billions of people worldwide rely on the internet for communication, commerce, and information.
+
+The World Wide Web is an information system built on top of the internet infrastructure. Tim Berners-Lee invented the web in 1989 using hypertext markup language, known as HTML, and the hypertext transfer protocol, known as HTTP, to link documents across networks.
+
+Cloud computing delivers computing services including servers, storage, databases, networking, software, and analytics over the internet. Major cloud providers like Amazon Web Services, Microsoft Azure, and Google Cloud offer scalable infrastructure for businesses worldwide.
+
+Web development involves building and maintaining websites and web applications. Frontend development focuses on user interface and experience using HTML, CSS, and JavaScript. Backend development handles server-side logic, databases, and application programming interfaces.
+
+The Internet of Things connects everyday physical devices to the internet, enabling them to collect and exchange data. Smart home devices, industrial sensors, and connected vehicles are transforming how people interact with their environment through networked technology.

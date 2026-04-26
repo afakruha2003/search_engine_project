@@ -1,0 +1,11 @@
+Renewable Energy and Sustainable Power
+
+Renewable energy comes from natural sources that are constantly replenished, such as sunlight, wind, rain, tides, waves, and geothermal heat. Unlike fossil fuels, renewable energy sources produce little to no greenhouse gas emissions during operation.
+
+Solar power converts sunlight into electricity using photovoltaic cells or solar thermal systems. The cost of solar panels has dropped dramatically over the past decade, making solar energy increasingly competitive with traditional fossil fuel electricity generation.
+
+Wind energy harnesses the power of wind through turbines to generate electricity. Offshore wind farms can capture stronger and more consistent winds than onshore installations. Wind power is one of the fastest growing energy sources globally.
+
+Hydroelectric power generates electricity by using the energy of flowing water to spin turbines. It is currently the largest source of renewable electricity worldwide. Pumped-storage hydropower also serves as a large-scale energy storage solution.
+
+Energy storage technologies, particularly lithium-ion batteries, are essential for managing the intermittent nature of solar and wind power. Advances in battery technology and grid management are making renewable energy systems more reliable and efficient for widespread adoption.

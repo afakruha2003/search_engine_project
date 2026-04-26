@@ -1,0 +1,11 @@
+Genetics and Biotechnology
+
+Genetics is the study of genes, heredity, and genetic variation in living organisms. DNA, or deoxyribonucleic acid, carries the genetic instructions for the development, functioning, growth, and reproduction of all known living organisms and viruses.
+
+CRISPR-Cas9 is a revolutionary gene editing technology that allows scientists to precisely modify DNA sequences in living organisms. It works like molecular scissors, cutting DNA at specific locations to delete, correct, or insert genetic material. CRISPR has enormous potential in medicine and agriculture.
+
+Genetic engineering involves manipulating the genetic makeup of organisms to produce desired traits. Genetically modified organisms, or GMOs, in agriculture are engineered for traits like pest resistance, drought tolerance, and enhanced nutritional content. Biotechnology applies biological systems to develop products and processes.
+
+Pharmacogenomics studies how genes affect a person's response to drugs. This field enables doctors to prescribe medications based on a patient's genetic profile, maximizing effectiveness while minimizing adverse reactions. Personalized medicine uses genetic information to customize healthcare.
+
+The study of epigenetics examines how environmental factors can influence gene expression without altering DNA sequences. Lifestyle factors like diet, stress, and exposure to toxins can cause epigenetic changes that affect health and may be passed to future generations.

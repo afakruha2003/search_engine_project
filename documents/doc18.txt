@@ -1,0 +1,11 @@
+History of Computing and Computer Science
+
+The history of computing spans centuries, from early mechanical calculators to modern quantum computers. Charles Babbage designed the Analytical Engine in the 1830s, an early concept for a general-purpose computer. Ada Lovelace wrote what is considered the first computer algorithm for this machine.
+
+Alan Turing was a pioneering mathematician who formalized the concept of computation and algorithms. The Turing machine, a theoretical computing model, laid the mathematical foundation for modern computer science. Turing also contributed foundational work to artificial intelligence theory.
+
+The first electronic computers were built in the 1940s. ENIAC, completed in 1945, was one of the earliest general-purpose electronic computers. It occupied a large room and used vacuum tubes for computation. Transistors replaced vacuum tubes in the 1950s, making computers smaller and more reliable.
+
+The invention of the integrated circuit in 1958 by Jack Kilby and Robert Noyce revolutionized computing. Moore's Law, proposed by Gordon Moore in 1965, predicted that the number of transistors on a chip would double approximately every two years, driving exponential growth in computing power.
+
+Personal computers became widely available in the 1980s following developments by Apple and IBM. The graphical user interface made computers accessible to non-technical users. The internet and World Wide Web transformed computing into a global communication and information network.

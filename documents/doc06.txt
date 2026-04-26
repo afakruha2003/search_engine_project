@@ -1,0 +1,11 @@
+Blockchain Technology and Cryptocurrency
+
+Blockchain is a distributed ledger technology that records transactions across multiple computers in a way that is transparent, secure, and immutable. Each block in the chain contains transaction data, a timestamp, and a cryptographic hash of the previous block.
+
+Bitcoin was the first cryptocurrency, created in 2009 by the pseudonymous Satoshi Nakamoto. It operates on a peer-to-peer network without central authority. Bitcoin uses proof-of-work consensus mechanism where miners compete to validate transactions and earn rewards.
+
+Ethereum is a blockchain platform that enables smart contracts and decentralized applications. Smart contracts are self-executing contracts with terms directly written into code. They automatically enforce and execute agreements without requiring intermediaries.
+
+Decentralized finance, known as DeFi, uses blockchain technology to recreate traditional financial services like lending, borrowing, and trading without central institutions. Non-fungible tokens, or NFTs, represent ownership of unique digital assets using blockchain verification.
+
+Cryptocurrency markets are highly volatile and speculative. Regulatory frameworks for digital currencies are evolving worldwide as governments seek to balance innovation with consumer protection and financial stability requirements.
