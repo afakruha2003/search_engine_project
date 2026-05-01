@@ -1,4 +1,4 @@
-# 🔍 Mini Search Engine
+#  Mini Search Engine
 
 **Course:** Information Management Systems (SENG328)  
 **Language:** Python 3.10+  
@@ -28,7 +28,7 @@ search_engine_project/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### 1. Install dependencies
 
