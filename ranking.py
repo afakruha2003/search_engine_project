@@ -6,8 +6,6 @@ All formulas implemented from scratch using math library only.
 
 import math
 from collections import Counter
-
-
 class TFIDFRanker:
     """
     Ranked retrieval using TF-IDF weighting and Cosine Similarity.
