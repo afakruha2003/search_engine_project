@@ -1,35 +1,17 @@
-"""
-positional_index.py
-Positional index supporting exact phrase queries.
-Stores {term: {doc_id: [positions]}} for consecutive position matching.
-"""
-
 from collections import defaultdict
 
 
 class PositionalIndex:
-    """
-    Positional index: stores term positions within each document.
-    Enables phrase query matching (e.g., "machine learning").
-    """
 
     def __init__(self):
         # {term: {doc_id: [pos1, pos2, ...]}}
         self.index: dict[str, dict[str, list[int]]] = {}
         self.doc_ids: list[str] = []
 
-    # ─────────────────────────────────────────
-    #  Build
-    # ─────────────────────────────────────────
+
+
 
     def build(self, processed_docs: dict[str, list[str]]):
-        """
-        Build positional index from preprocessed documents.
-
-        Parameters
-        ----------
-        processed_docs : {doc_id: [tokens_in_order]}
-        """
         self.doc_ids = sorted(processed_docs.keys())
         raw_index: dict[str, dict[str, list[int]]] = defaultdict(lambda: defaultdict(list))
 
@@ -43,18 +25,12 @@ class PositionalIndex:
             for term, doc_map in sorted(raw_index.items())
         }
 
-    # ─────────────────────────────────────────
-    #  Phrase query
-    # ─────────────────────────────────────────
+
+
 
     def phrase_query(self, phrase_tokens: list[str]) -> list[str]:
         """
-        Find documents where all phrase tokens appear consecutively
-        in the correct order.
-
-        Parameters
-        ----------
-        phrase_tokens : already preprocessed list of terms in the phrase
+        Find documents where all phrase tokens appear consecutively in the correct order.
         """
         if not phrase_tokens:
             return []
@@ -86,9 +62,10 @@ class PositionalIndex:
 
         return matching_docs
 
+
     def _positions_match(self, doc_id: str, phrase_tokens: list[str]) -> bool:
         """
-        Check whether phrase_tokens appear consecutively in doc_id.
+        Check whether phrase_tokens appear in doc_id.
         For each starting position of the first term, verify that
         term[k] appears at position(start + k).
         """
@@ -107,9 +84,8 @@ class PositionalIndex:
 
         return False
 
-    # ─────────────────────────────────────────
-    #  Single-term lookup
-    # ─────────────────────────────────────────
+
+
 
     def lookup(self, term: str) -> dict:
         """Return positional data for a single term."""
@@ -124,9 +100,9 @@ class PositionalIndex:
             }
         return {'term': term, 'df': 0, 'postings': {}}
 
-    # ─────────────────────────────────────────
-    #  Display helpers
-    # ─────────────────────────────────────────
+
+
+
 
     def get_sample_entries(self, n: int ) -> list[dict]:
         """Return first n entries for display."""

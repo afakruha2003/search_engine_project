@@ -50,7 +50,7 @@ Then open your browser at: **http://localhost:8501**
 
 1. **Sidebar → Enter folder path** (default: `documents`)
 2. **Choose preprocessing method**: Stemming or Lemmatization
-3. **Click "Load & Build Indexes"** — all 4 indexes are built automatically
+3. **Click "Load & Build Indexes"** — all 4 indexes are built automatically (inverted matrix , inverted index , positional index ,TF-IDF ranker)
 4. **Navigate using the sidebar** to explore each feature:
 
 | Page | Description |

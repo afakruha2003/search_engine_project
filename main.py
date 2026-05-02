@@ -1,17 +1,10 @@
-"""
-main.py
-Mini Search Engine — Streamlit Web Interface
-Run: streamlit run main.py
-"""
-
-import streamlit as st
-import pandas as pd
-import os
-import time
+import streamlit as st # for web app
+import pandas as pd 
+import os # for file handling
+import time # for measuring query execution time
 
 from preprocessing import (
-    load_documents, preprocess_all, preprocess,
-    compare_stemming_lemmatization
+    load_documents, preprocess_all, preprocess, compare_stemming_lemmatization 
 )
 from incidence_matrix import IncidenceMatrix
 from inverted_index import InvertedIndex
@@ -22,9 +15,7 @@ from utils import (
     generate_snippet, compute_metrics
 )
 
-# ─────────────────────────────────────────────
 #  Page Config
-# ─────────────────────────────────────────────
 
 st.set_page_config(
     page_title="Mini Search Engine",
@@ -32,9 +23,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# ─────────────────────────────────────────────
-#  Custom CSS
-# ─────────────────────────────────────────────
+
 
 st.markdown("""
     <style>
@@ -159,10 +148,8 @@ st.markdown("""
  </style>
 """, unsafe_allow_html=True)
 
-# ─────────────────────────────────────────────
-#  Session State Init
-# ─────────────────────────────────────────────
 
+#  Session State Init
 def init_state():
     defaults = {
         'documents': {},
@@ -182,9 +169,8 @@ def init_state():
 
 init_state()
 
-# ─────────────────────────────────────────────
+
 #  Helpers
-# ─────────────────────────────────────────────
 
 def get_preprocessor(use_stemming=True, use_lemma=False):
     def preprocessor(text):
@@ -196,12 +182,11 @@ def doc_title(doc_id: str, raw_docs: dict) -> str:
     lines = [l.strip() for l in text.split('\n') if l.strip()]
     return lines[0] if lines else doc_id
 
-# ─────────────────────────────────────────────
-#  Sidebar
-# ─────────────────────────────────────────────
 
+
+#  Sidebar
 with st.sidebar:
-    st.markdown("## Mini Search Engine")
+    st.markdown("## Ruhe Search Engine")
     st.markdown("---")
 
     st.markdown("### Document Folder")
@@ -210,12 +195,12 @@ with st.sidebar:
     st.markdown("### Preprocessing Options")
     method = st.radio(
         "Normalization Method",
-        ["Stemming (Porter)", "Lemmatization (WordNet)", "Both (Compare)"],
+        ["Stemming ", "Lemmatization", "Both (Compare)"],
         index=0,
         label_visibility="collapsed"
     )
-    use_stemming = method in ["Stemming (Porter)", "Both (Compare)"]
-    use_lemma = method in ["Lemmatization (WordNet)", "Both (Compare)"]
+    use_stemming = method in ["Stemming ", "Both (Compare)"]
+    use_lemma = method in ["Lemmatization", "Both (Compare)"]
 
     if st.button("Load & Build Indexes", use_container_width=True):
         with st.spinner("Loading documents..."):
@@ -280,20 +265,17 @@ with st.sidebar:
         label_visibility="collapsed"
     )
 
-# ─────────────────────────────────────────────
+
 #  Main Header
-# ─────────────────────────────────────────────
 
 st.markdown("""
 <div class="main-header">
-    <h1>Mini Search Engine</h1>
+    <h1>Ruhe Search Engine</h1>
     <p>Information Retrieval System — SENG328 Project</p>
 </div>
 """, unsafe_allow_html=True)
 
-# ─────────────────────────────────────────────
-#  Guard: Indexes must be built for most pages
-# ─────────────────────────────────────────────
+
 
 def require_indexes():
     if not st.session_state['indexes_built']:
@@ -304,9 +286,7 @@ def require_indexes():
         """, unsafe_allow_html=True)
         st.stop()
 
-# ─────────────────────────────────────────────
-#  HOME
-# ─────────────────────────────────────────────
+
 
 if page == "Home":
     col1, col2, col3, col4 = st.columns(4)
@@ -314,11 +294,7 @@ if page == "Home":
     vocab = len(st.session_state['ranker'].vocabulary) if st.session_state['ranker'] else 0
     n_idx = 4 if st.session_state['indexes_built'] else 0
 
-    for col, val, label in zip(
-        [col1, col2, col3, col4],
-        [n_docs, vocab, n_idx, "Ready" if st.session_state['indexes_built'] else "Pending"],
-        ["Documents", "Vocabulary Size", "Indexes Built", "System Status"]
-    ):
+    for col, val, label in zip([col1, col2, col3, col4],[n_docs, vocab, n_idx, "Ready" if st.session_state['indexes_built'] else "Pending"],  ["Documents", "Vocabulary Size", "Indexes Built", "System Status"]):
         col.markdown(f"""
         <div class="metric-box">
             <div class="stat-number">{val}</div>
@@ -334,26 +310,26 @@ if page == "Home":
     │                    MINI SEARCH ENGINE                       │
     ├─────────────────────────────────────────────────────────────┤
     │  INPUT LAYER                                                │
-    │  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐      │
-    │  │  20 .txt    │   │  User       │   │  Query      │      │
-    │  │  Documents  │   │  Interface  │   │  Input      │      │
-    │  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘      │
-    │         │                 │                  │             │
-    │  PREPROCESSING PIPELINE                      │             │
-    │  Case Fold → Tokenize → Remove Stopwords     │             │
-    │  → Stem/Lemmatize → Filter Short Terms       │             │
-    │                                              │             │
-    │  INDEX LAYER                    QUERY LAYER               │
-    │  ┌───────────┐  ┌───────────┐  ┌───────────┐             │
-    │  │ Incidence │  │ Inverted  │  │ Positional│             │
-    │  │  Matrix   │  │  Index    │  │  Index    │             │
-    │  └───────────┘  └───────────┘  └───────────┘             │
-    │                                                            │
-    │  RETRIEVAL LAYER                                          │
-    │  Boolean (AND/OR/NOT) │ Phrase Query │ TF-IDF Ranking     │
-    │                                                            │
-    │  BONUS FEATURES                                           │
-    │  Wildcard │ Spell Correct │ Query Expand │ Snippets        │
+    │  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐        │
+    │  │  20 .txt    │   │  User       │   │  Query      │        │
+    │  │  Documents  │   │  Interface  │   │  Input      │        │
+    │  └──────┬──────┘   └──────┬──────┘   └──────┬──────┘        │
+    │         │                 │                 │               │ 
+    │  PREPROCESSING PIPELINE                     │               │
+    │  Case Fold → Tokenize → Remove Stopwords    │               │
+    │  → Stem/Lemmatize → Filter Short Terms      │               │
+    │                                             │               │
+    │  INDEX LAYER                    QUERY LAYER                 │
+    │  ┌───────────┐  ┌───────────┐  ┌───────────┐                │
+    │  │ Incidence │  │ Inverted  │  │ Positional│                │
+    │  │  Matrix   │  │  Index    │  │  Index    │                │
+    │  └───────────┘  └───────────┘  └───────────┘                │
+    │                                                             │
+    │  RETRIEVAL LAYER                                            │
+    │  Boolean (AND/OR/NOT) │ Phrase Query │ TF-IDF Ranking       │
+    │                                                             │
+    │  BONUS FEATURES                                             │
+    │  Wildcard │ Spell Correct │ Query Expand │ Snippets         │
     └─────────────────────────────────────────────────────────────┘
     """
     st.code(arch, language=None)
@@ -373,9 +349,7 @@ if page == "Home":
             })
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 
-# ─────────────────────────────────────────────
-#  PREPROCESSING
-# ─────────────────────────────────────────────
+
 
 elif page == "Preprocessing":
     require_indexes()
@@ -427,9 +401,7 @@ elif page == "Preprocessing":
             })
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
 
-# ─────────────────────────────────────────────
-#  INCIDENCE MATRIX
-# ─────────────────────────────────────────────
+
 
 elif page == "Incidence Matrix":
     require_indexes()
@@ -464,9 +436,7 @@ elif page == "Incidence Matrix":
         else:
             st.warning("No documents found.")
 
-# ─────────────────────────────────────────────
-#  INVERTED INDEX
-# ─────────────────────────────────────────────
+
 
 elif page == "Inverted Index":
     require_indexes()
@@ -513,9 +483,7 @@ elif page == "Inverted Index":
         else:
             st.warning("No documents matched the query.")
 
-# ─────────────────────────────────────────────
-#  POSITIONAL INDEX
-# ─────────────────────────────────────────────
+
 
 elif page == "Positional Index":
     require_indexes()
@@ -574,9 +542,6 @@ elif page == "Positional Index":
             else:
                 st.warning(f"Term '{processed[0]}' not found.")
 
-# ─────────────────────────────────────────────
-#  RANKED RETRIEVAL
-# ─────────────────────────────────────────────
 
 elif page == "Ranked Retrieval":
     require_indexes()
@@ -666,9 +631,6 @@ elif page == "Ranked Retrieval":
         if top_terms:
             st.dataframe(pd.DataFrame(top_terms), use_container_width=True, hide_index=True)
 
-# ─────────────────────────────────────────────
-#  BOOLEAN SEARCH
-# ─────────────────────────────────────────────
 
 elif page == "Boolean Search":
     require_indexes()
@@ -729,9 +691,7 @@ elif page == "Boolean Search":
             
             st.error(f"An error occurred while executing the query: {str(e)}")
             st.info("Check your 'boolean_query' function logic in the backend classes.")
-# ─────────────────────────────────────────────
-#  BONUS FEATURES
-# ─────────────────────────────────────────────
+
 
 elif page == "Bonus Features":
     require_indexes()
@@ -802,30 +762,6 @@ elif page == "Bonus Features":
                 for r in results:
                     st.write(f"**#{r['rank']}** {r['doc_id']}: {doc_title(r['doc_id'], st.session_state['documents'])} (score: {r['score']:.4f})")
 
-    with tab4:
-        st.markdown("### Document Snippets")
-        snippet_query = st.text_input("Enter query for snippet generation:", placeholder="machine learning neural")
-        snippet_doc = st.selectbox("Select document:", list(st.session_state['documents'].keys()))
-        if st.button("Generate Snippet") and snippet_query and snippet_doc:
-            preprocessor = get_preprocessor(st.session_state['use_stemming'], st.session_state['use_lemma'])
-            query_tokens = preprocessor(snippet_query)
-            raw_text = st.session_state['documents'][snippet_doc]
-            snippet = generate_snippet(raw_text, query_tokens, snippet_length=300)
-
-            st.markdown("**Generated Snippet:**")
-            st.markdown(f"""
-            <div class="result-card">
-                <strong>{snippet_doc}</strong><br>
-                <span class="snippet-text">{snippet}</span>
-            </div>
-            """, unsafe_allow_html=True)
-
-            st.markdown("**Full document (first 500 chars):**")
-            st.text(raw_text[:500])
-
-# ─────────────────────────────────────────────
-#  EVALUATION
-# ─────────────────────────────────────────────
 
 elif page == "Evaluation":
     require_indexes()

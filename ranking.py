@@ -1,15 +1,7 @@
-"""
-ranking.py
-TF-IDF weighting and Cosine Similarity for ranked retrieval.
-All formulas implemented from scratch using math library only.
-"""
-
-import math
-from collections import Counter
+import math 
+from collections import Counter # used to count term frequencies 
 class TFIDFRanker:
     """
-    Ranked retrieval using TF-IDF weighting and Cosine Similarity.
-
     Formulas used:
         tf(t, d)    = count of t in d / total tokens in d
         idf(t)      = log(N / df(t))          [base-10 log]
@@ -19,23 +11,13 @@ class TFIDFRanker:
 
     def __init__(self):
         self.tfidf_matrix: dict[str, dict[str, float]] = {}  # {doc_id: {term: tfidf}}
-        self.idf: dict[str, float] = {}
+        self.idf: dict[str, float] = {} #dictionary to store IDF values for each term
         self.doc_ids: list[str] = []
         self.vocabulary: list[str] = []
-        self.N: int = 0
+        self.N: int = 0 # total number of documents in the collection
 
-    # ─────────────────────────────────────────
-    #  Build
-    # ─────────────────────────────────────────
 
     def build(self, processed_docs: dict[str, list[str]]):
-        """
-        Compute TF-IDF matrix for all documents.
-
-        Parameters
-        ----------
-        processed_docs : {doc_id: [tokens]}
-        """
         self.doc_ids = sorted(processed_docs.keys())
         self.N = len(self.doc_ids)
 
@@ -74,9 +56,9 @@ class TFIDFRanker:
                 doc_tfidf[term] = tf * self.idf.get(term, 0)
             self.tfidf_matrix[doc_id] = doc_tfidf
 
-    # ─────────────────────────────────────────
-    #  Query vector
-    # ─────────────────────────────────────────
+
+
+
 
     def _query_vector(self, query_tokens: list[str]) -> dict[str, float]:
         """
@@ -92,60 +74,49 @@ class TFIDFRanker:
             q_vec[term] = tf * idf
         return q_vec
 
-    # ─────────────────────────────────────────
-    #  Cosine Similarity
-    # ─────────────────────────────────────────
 
-    @staticmethod
+
+
+#  Cosine Similarity
+  
+    @staticmethod # method to compute dot product of two sparse vectors
     def _dot_product(vec_a: dict, vec_b: dict) -> float:
         """Compute dot product of two sparse vectors."""
         common = set(vec_a.keys()) & set(vec_b.keys())
         return sum(vec_a[t] * vec_b[t] for t in common)
 
-    @staticmethod
+
+    @staticmethod # method to compute magnitude of a sparse vector
     def _magnitude(vec: dict) -> float:
         """Compute L2 magnitude of a vector."""
         return math.sqrt(sum(v ** 2 for v in vec.values()))
 
+
     def cosine_similarity(self, vec_a: dict, vec_b: dict) -> float:
-        """
-        Compute cosine similarity between two TF-IDF vectors.
-        cosine = (A · B) / (|A| × |B|)
-        """
         mag_a = self._magnitude(vec_a)
         mag_b = self._magnitude(vec_b)
         if mag_a == 0 or mag_b == 0:
             return 0.0
         return self._dot_product(vec_a, vec_b) / (mag_a * mag_b)
 
-    # ─────────────────────────────────────────
+
+
     #  Ranked retrieval
-    # ─────────────────────────────────────────
 
     def rank(self, query_tokens: list[str], top_k: int = None) -> list[dict]:
-        """
-        Rank all documents by cosine similarity to the query.
 
-        Parameters
-        ----------
-        query_tokens : preprocessed query tokens
-        top_k        : return top k results (None = all)
-
-        Returns
-        -------
-        List of {'rank', 'doc_id', 'score'} sorted by score descending.
-        """
         if not query_tokens:
             return []
 
-        q_vec = self._query_vector(query_tokens)
-
+        q_vec = self._query_vector(query_tokens) # Convert query tokens to TF-IDF vector using the same IDF values as the document collection
         scores = []
+        
+        # this loop will compute the cosine similarity score between the query vector and each document vector, and store them
         for doc_id, doc_vec in self.tfidf_matrix.items():
             score = self.cosine_similarity(q_vec, doc_vec)
             if score > 0:
                 scores.append({'doc_id': doc_id, 'score': round(score, 6)})
-
+       
         # Sort by score descending
         scores.sort(key=lambda x: x['score'], reverse=True)
 
@@ -158,9 +129,9 @@ class TFIDFRanker:
 
         return scores
 
-    # ─────────────────────────────────────────
+
+
     #  Inspect TF-IDF values
-    # ─────────────────────────────────────────
 
     def get_top_terms(self, doc_id: str, n: int = 10) -> list[dict]:
         """Return top n TF-IDF weighted terms for a document."""
