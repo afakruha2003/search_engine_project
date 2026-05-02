@@ -130,7 +130,7 @@ class IncidenceMatrix:
     #  Display helpers
     # ─────────────────────────────────────────
 
-    def get_sample(self, n_terms: int = 15, n_docs: int = 10) -> pd.DataFrame:
+    def get_sample(self, n_terms: int , n_docs: int ) -> pd.DataFrame:
         """Return a visible sample of the matrix."""
         if self.matrix is None:
             return pd.DataFrame()
