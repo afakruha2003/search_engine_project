@@ -150,7 +150,7 @@ class InvertedIndex:
     #  Display helpers
     # ─────────────────────────────────────────
 
-    def get_sample_entries(self, n: int = 20) -> list[dict]:
+    def get_sample_entries(self, n: int ) -> list[dict]:
         """Return first n entries for display."""
         entries = []
         for i, (term, data) in enumerate(self.index.items()):
