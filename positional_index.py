@@ -128,7 +128,7 @@ class PositionalIndex:
     #  Display helpers
     # ─────────────────────────────────────────
 
-    def get_sample_entries(self, n: int = 15) -> list[dict]:
+    def get_sample_entries(self, n: int ) -> list[dict]:
         """Return first n entries for display."""
         entries = []
         for i, (term, doc_map) in enumerate(self.index.items()):
