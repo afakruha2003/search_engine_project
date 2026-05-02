@@ -1,5 +1,9 @@
 Cybersecurity and Data Protection
 
+Data security or data protection is the process of securing digital information to protect it from online threats. Data security or protection means protecting digital data, such as those in a database, from destructive forces and from the unwanted actions of unauthorized users,[1] such as a cyberattack or a data breach.[2] Data security protects computer hardware, software, storage devices, and the data of user devices. Data security also protects the data of organizations, companies and administrative controls.
+
+Data security guarantees the protection of individual data, such as identity documents and bank data, and protects against unauthorized access, theft and loss of individual data. Data security also protects data breaches that occurs in companies and industries. Good security measures in industries reduce the probability of data breaches, and employees can rely on the company with their data and private information to be kept secured while companies can continue to maintain a stable reputation.[3]
+
 Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information, extorting money from users, or interrupting normal business processes.
 
 Malware is malicious software designed to disrupt, damage, or gain unauthorized access to computer systems. Common types include viruses, ransomware, spyware, and trojans. Phishing attacks trick users into revealing sensitive information through fraudulent emails or websites.

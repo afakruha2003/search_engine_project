@@ -1,4 +1,5 @@
 History of Computing and Computer Science
+The history of computing extends beyond the history of computing hardware and modern computing technology including earlier methods that relied on pen and paper or chalk and slate, with or without the aid of tables.
 
 The history of computing spans centuries, from early mechanical calculators to modern quantum computers. Charles Babbage designed the Analytical Engine in the 1830s, an early concept for a general-purpose computer. Ada Lovelace wrote what is considered the first computer algorithm for this machine.
 

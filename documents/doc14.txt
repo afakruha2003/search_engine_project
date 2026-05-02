@@ -1,6 +1,22 @@
 Genetics and Biotechnology
 
+Biotechnology is a multidisciplinary field that involves the integration of natural sciences and engineering sciences to achieve the application of organisms and parts thereof for products and services.[1] Specialists in the field are known as biotechnologists.
+
+The term biotechnology was first used by Károly Ereky in 1919[2] to refer to the production of products from raw materials with the aid of living organisms. The core principle of biotechnology involves harnessing biological systems and organisms, such as bacteria, yeast, and plants, to perform specific tasks or produce valuable substances.
+
+Biotechnology has had a significant impact on many areas of society, from medicine to agriculture to environmental science. One of the key techniques used in biotechnology is genetic engineering, which allows scientists to modify the genetic makeup of organisms to achieve desired outcomes. This can involve inserting genes from one organism into another, and consequently, creating new traits or modifying existing ones.[3]
+
+Other important techniques used in biotechnology include tissue culture, which allows researchers to grow cells and tissues in the lab for research and medical purposes, and fermentation, which is used to produce a wide range of products such as beer, wine, and cheese.
+
 Genetics is the study of genes, heredity, and genetic variation in living organisms. DNA, or deoxyribonucleic acid, carries the genetic instructions for the development, functioning, growth, and reproduction of all known living organisms and viruses.
+
+The applications of biotechnology are diverse and have led to the development of products like drugs, biofuels, genetically modified crops, and innovative materials.[4] It has also been used to address environmental challenges, such as developing biodegradable plastics and using microorganisms to clean up contaminated sites.
+
+Biotechnology is a rapidly evolving field with significant potential to address pressing global challenges and improve the quality of life for people around the world; however, despite its numerous benefits, it also poses ethical and societal challenges, such as questions around genetic modification and intellectual property rights. As a result, there is ongoing debate and regulation surrounding the use and application of biotechnology in various industries and fields.[5]
+
+Biotechnology encompasses a wide range of procedures for modifying living organisms for human purposes, going back to domestication of animals, the cultivation of plants, and "improvements" to these through breeding programs that employ artificial selection and hybridization. Modern usage also includes genetic engineering, as well as cell and tissue culture technologies. The American Chemical Society defines biotechnology as the application of biological organisms, systems, or processes by various industries to learning about the science of life and the improvement of the value of materials and organisms, such as pharmaceuticals, crops, and livestock.[6] As per the European Federation of Biotechnology, biotechnology is the integration of natural science and organisms, cells, parts thereof, and molecular analogues for products and services.[7] Biotechnology is based on the basic biological sciences (e.g., molecular biology, biochemistry, cell biology, embryology, genetics, microbiology) and conversely provides methods to support and perform basic research in biology.[8]
+
+
 
 CRISPR-Cas9 is a revolutionary gene editing technology that allows scientists to precisely modify DNA sequences in living organisms. It works like molecular scissors, cutting DNA at specific locations to delete, correct, or insert genetic material. CRISPR has enormous potential in medicine and agriculture.
 

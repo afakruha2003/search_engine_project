@@ -1,5 +1,13 @@
 Robotics and Industrial Automation
 
+Robotics is the interdisciplinary study and practice of the design, construction, operation, and use of robots.[1] A roboticist is someone who specializes in robotics.[2] Robotics usually combines four aspects of design work: a power source (e.g. a battery), mechanical construction, a control system (electrical circuits), and software (run by remote control or artificial intelligence).
+
+The goal of most robotics is to design machines that can assist humans in various fields, such as agriculture, construction, domestic work, food processing, inventory management, manufacturing, medicine, military, mining, space exploration, and transportation.
+
+Robots impact humans by displacing workers. Some expect this to occur at an increasing rate, leading to proposed solutions such as basic income. Robotics is itself a lucrative business that creates careers, especially for postgraduates. Roboticists often aim to create machines that seem to interface naturally with humans. The field is under active research and development, with areas of interest including robot kinematics and quantum robotics.
+
+
+
 Robotics is an interdisciplinary field combining computer science, engineering, and technology to design, build, and operate robots. Robots are programmable machines capable of performing tasks automatically or semi-automatically, often replacing or assisting human workers.
 
 Industrial robots have transformed manufacturing by performing repetitive tasks with high precision and speed. Automotive assembly lines use robotic arms for welding, painting, and part assembly. These machines improve productivity while reducing human error and workplace injuries.

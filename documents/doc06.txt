@@ -1,5 +1,18 @@
 Blockchain Technology and Cryptocurrency
 
+A blockchain is a distributed ledger with growing lists of records (blocks) that are securely linked together via cryptographic hashes.[1][2][3][4] Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data (generally represented as a Merkle tree, where data nodes are represented by leaves). Since each block contains information about the previous block, they effectively form a chain (viz. linked list data structure), with each additional block linking to the ones before it. Consequently, blockchain transactions are resistant to alteration because, once recorded, the data in any given block cannot be changed retroactively without altering all subsequent blocks and obtaining network consensus to accept these changes.
+
+Blockchains are typically managed by a peer-to-peer (P2P) computer network for use as a public distributed ledger, where nodes collectively adhere to a consensus algorithm protocol to add and validate new transaction blocks. Although blockchain records are not unalterable, since blockchain forks are possible, blockchains may be considered secure by design and exemplify a distributed computing system with high Byzantine fault tolerance.[5]
+
+A blockchain was created by a person (or group of people) using the name (or pseudonym) Satoshi Nakamoto in 2008 to serve as the public distributed ledger for bitcoin cryptocurrency transactions, based on previous work by Stuart Haber, W. Scott Stornetta, and Dave Bayer.[6] The implementation of the blockchain within bitcoin made it the first digital currency to solve the double-spending problem without the need for a trusted authority or central server. The bitcoin design has inspired other applications[3][2] and blockchains that are readable by the public and are widely used by cryptocurrencies. The blockchain may be considered a type of payment rail.[7]
+
+Private blockchains have been proposed for business use. Computerworld called the marketing of such privatized blockchains without a proper security model "snake oil";[8] however, others have argued that permissioned blockchains, if carefully designed, may be more decentralized and therefore more secure in practice than permissionless ones.[4][9]
+
+Cryptocurrency is a type of digital asset that uses distributed ledger, or blockchain, technology to enable a secure transaction.[1]
+
+Individual coin ownership records are stored in a digital ledger or blockchain, which is a computerized database that uses a consensus mechanism to secure transaction records, control the creation of additional coins, and verify the transfer of coin ownership.[2][3][4] The two most common consensus mechanisms are proof of work and proof of stake.[5] Despite the name, which has come to describe many of the fungible blockchain tokens that have been created, cryptocurrencies are not considered to be currencies in the traditional sense, and varying legal treatments have been applied to them in various jurisdictions, including classification as commodities, securities, and currencies. Cryptocurrencies are generally viewed as a distinct asset class in practice.[6][7][8]
+
+
 Blockchain is a distributed ledger technology that records transactions across multiple computers in a way that is transparent, secure, and immutable. Each block in the chain contains transaction data, a timestamp, and a cryptographic hash of the previous block.
 
 Bitcoin was the first cryptocurrency, created in 2009 by the pseudonymous Satoshi Nakamoto. It operates on a peer-to-peer network without central authority. Bitcoin uses proof-of-work consensus mechanism where miners compete to validate transactions and earn rewards.
