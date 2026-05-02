@@ -1,36 +1,14 @@
-"""
-inverted_index.py
-Build an inverted index and support Boolean AND / OR / NOT queries
-with posting list merging.
-"""
-
 from collections import defaultdict
-
-
 class InvertedIndex:
-    """
-    Inverted index: maps each term to its posting list.
-    Posting list = sorted list of doc IDs containing the term.
-    Also stores document frequency (df) per term.
-    """
 
     def __init__(self):
         # {term: {'df': int, 'postings': [doc_id, ...]}}
         self.index: dict = {}
         self.doc_ids: list[str] = []
 
-    # ─────────────────────────────────────────
-    #  Build
-    # ─────────────────────────────────────────
 
     def build(self, processed_docs: dict[str, list[str]]):
-        """
-        Build inverted index from preprocessed documents.
 
-        Parameters
-        ----------
-        processed_docs : {doc_id: [tokens]}
-        """
         self.doc_ids = sorted(processed_docs.keys())
         raw_index: dict[str, set] = defaultdict(set)
 
@@ -46,10 +24,8 @@ class InvertedIndex:
             for term, postings in sorted(raw_index.items())
         }
 
-    # ─────────────────────────────────────────
+  
     #  Posting list helpers
-    # ─────────────────────────────────────────
-
     def get_postings(self, term: str) -> list[str]:
         """Return posting list for a term."""
         if term in self.index:
@@ -89,10 +65,8 @@ class InvertedIndex:
         posting_set = set(postings)
         return [d for d in self.doc_ids if d not in posting_set]
 
-    # ─────────────────────────────────────────
-    #  Query
-    # ─────────────────────────────────────────
 
+    #  Query
     def boolean_query(self, query: str, preprocessor) -> list[str]:
         """
         Parse and execute Boolean query using posting list merge.
@@ -145,13 +119,13 @@ class InvertedIndex:
         if term in self.index:
             return {'term': term, **self.index[term]}
         return {'term': term, 'df': 0, 'postings': []}
-
-    # ─────────────────────────────────────────
+    
+    
+    
+    
+    
     #  Display helpers
-    # ─────────────────────────────────────────
-
     def get_sample_entries(self, n: int ) -> list[dict]:
-        """Return first n entries for display."""
         entries = []
         for i, (term, data) in enumerate(self.index.items()):
             if i >= n:
