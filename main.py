@@ -11,9 +11,7 @@ from inverted_index import InvertedIndex
 from positional_index import PositionalIndex
 from ranking import TFIDFRanker
 from utils import (
-    wildcard_search, suggest_corrections, expand_query,
-    generate_snippet, compute_metrics
-)
+    wildcard_search, suggest_corrections, expand_query, compute_metrics)
 
 #  Page Config
 
